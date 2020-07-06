@@ -1,7 +1,7 @@
 # kr_research
 
 - Major : Multimedia Engineering
-- Studing : Bioinformatics
+- Studying : Bioinformatics
 - Method : Hash-table
 
 
