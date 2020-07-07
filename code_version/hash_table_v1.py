@@ -118,6 +118,18 @@ def main():
     print("Query short read (Reverse):", __local__query_reverse_length)
     print('')
 
+    # -----------------------------------------------------------------------------------------
+    #coco = dict(zip([i for i in range(1, len(__local__ref_length) + 1)], __local__ref_length))
+    for i, name in enumerate(__local__ref_length, 0):
+        coco = print(name, i)
+    #coco = dict(enumerate(__local__ref_length, 0))
+    coco.keys()
+    print(coco.keys())
+    #dict(enumerate(__local__ref_length, 0))
+    #Example(__local__ref_length[i], i)
+    # -----------------------------------------------------------------------------------------
+    
+    
     file_0.close()
     file_1.close()
     file_2.close()
