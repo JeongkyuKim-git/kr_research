@@ -148,6 +148,7 @@ def main():
     print("Reference short read :", __local__ref_length)
     print("Query short read (Forward) :", __local__query_length)
     print("Query short read (Reverse):", __local__query_reverse_length)
+    print("----------------< k-mer (size) >-------------------")
     print("")
 
     #coco = dict(zip([i for i in range(1, len(__local__ref_length) + 1)], __local__ref_length))
@@ -161,9 +162,10 @@ def main():
     reference_d = dic_example(__local__ref_length)
     query_forward_d = dic_example(__local__query_length)
     query_reverse_d = dic_example(__local__query_reverse_length)
-    print(reference_d)
-    print(query_forward_d)
-    print(query_reverse_d)
+    print("Reference dictionary",reference_d)
+    print("query_forward dictionary",query_forward_d)
+    print("query_reverse dictionary",query_reverse_d)
+    print("----------------< dictionary setting >-------------------")
     print("")
 
     """
@@ -183,6 +185,37 @@ def main():
     Unique_set_qf = set(query_forward_d)
     Unique_set_qr = set(query_reverse_d)
 
+    # Unique RF<-->QF (common_data_set)
+    common_reference_set_f = Unique_set_f.intersection(Unique_set_qf)
+    print(common_reference_set_f)
+    test_ff = Unique_set_f - common_reference_set_f
+    test2_ff = reference_d
+    [test2_ff.pop(key, None) for key in test_ff]
+    print("RF(origin)<-->QF unique >", test2_ff)
+    print("")
+
+    # Unique RF<-->QR (common_data_set)
+    common_reference_set_r = Unique_set_f.intersection(Unique_set_qr)
+    print("union",common_reference_set_r)
+    print(Unique_set_f)
+    test_fr = Unique_set_f - common_reference_set_r
+    print(test_fr)
+    test2_fr = reference_d
+    print(test2_fr)
+    [test2_fr.pop(key, None) for key in test_fr]
+    print("RF<-->QR unique >", test2_fr)
+    print("----------------< Hash-table setting >-------------------")
+    print("")
+
+
+    # Unique QF<-->RF (common_data_set)
+    common_query_set_f = Unique_set_f.intersection(Unique_set_qr)
+    print(common_query_set_f)
+
+    # Unique QR<-->RF (common_data_set)
+    common_query_set_r = Unique_set_f.intersection(Unique_set_qr)
+    print(common_query_set_r)
+
     remove_empty_ff_key = Unique_set_f.difference(Unique_set_qf)
     unique_reference_ffd = reference_d
     [unique_reference_ffd.pop(key, None) for key in remove_empty_ff_key]
@@ -194,7 +227,6 @@ def main():
     print("Query_forward unique >", unique_reference_qfd)
 
     #---------------------------------------------------------------------
-    print("")
 
     remove_empty_qr_key = Unique_set_qr.difference(Unique_set_f)
     unique_reference_qrd = query_reverse_d
