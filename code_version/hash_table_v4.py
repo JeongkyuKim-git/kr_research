@@ -114,9 +114,14 @@ def main():
     # Main_Focus_Starting_print()
     print("--Main Function--",'\n')
 
-    print("Reference short read :", __local__ref_length)
-    print("Query short read (Forward) :", __local__query_length)
-    print("Query short read (Reverse):", __local__query_reverse_length)
+    print("Reference short read : >")
+    print(__local__ref_length)
+
+    print("Query short read (Forward) > :")
+    print(__local__query_length)
+
+    print("Query short read (Reverse) > :")
+    print(__local__query_reverse_length)
     print("----------------< k-mer (size) >-------------------")
     print("")
 
@@ -150,9 +155,7 @@ def main():
 
     def unique_change_data(fix_data, origin_set_data, compared_set_data):
         complement_data = origin_set_data - compared_set_data
-        print(complement_data)
         test = fix_data
-        print(test)
         [test.pop(key, None) for key in complement_data]
         print("complement data", test)
         return test
@@ -163,7 +166,7 @@ def main():
         test2_ff = fix_data
         [test2_ff.pop(key, None) for key in symmetric_difference]
         return test2_ff
-
+    """
     # test
     print("RF(origin)")
     print(reference_d)
@@ -177,34 +180,26 @@ def main():
     print("Q_Reverse unique > : ")
     D = test(query_reverse_d, Unique_set_qr, Unique_set_fr)
     print(D)
-
     """
-    # Unique RF<-->QF (common_data_set)
-    unique_change_data(reference_d, Unique_set_f, Unique_set_qf)
 
-    print (reference_d)
-    print(Unique_set_f)
-    # Unique RF<-->QR (common_data_set)
-    unique_change_data(reference_d, Unique_set_fr, Unique_set_qr)
+    print("Reference (origin) > :")
+    #Unique RF<-->QF (common_data_set)
+    print(reference_d)
 
     # Unique QF<-->RF (common_data_set)
-    unique_change_data(reference_d, Unique_set_qf, Unique_set_f)
+    print("Query_Forward unique > : ")
+    unique_change_data(query_forward_d, Unique_set_qf, Unique_set_f)
 
     # Unique QR<-->RF (common_data_set)
-    unique_change_data(reference_d, Unique_set_qr, Unique_set_fr)
-    """
+    print("Query_Reverse unique > : ")
+    unique_change_data(query_reverse_d, Unique_set_qr, Unique_set_fr)
     print("----------------< unique setting >-------------------")
-    print("")
-
-    print("----------------< Graph setting >-------------------")
-    print("")
-
     #
     # keys = reference_d.keys()
     # for k in keys:
     #    print(k)
 
-    #figure_plot()
+    figure_plot()
     #figure_chart2()
     print("")
 
@@ -213,14 +208,18 @@ if __name__ == "__main__":
     # speed_check_timer : alignment
     start = time.time()
 
+
     # file_[i] using open
     file_0 = open("Ref.fa", "r")
     file_1 = open("Query.fa", "r")
     file_2 = open("Query_2.fa", "r")
+    #"""
+    #file_0 = open("Cryptomonas curvata.fa", "r")
+    #file_1 = open("Cryptomonas curvata3_85524-128285_v3.fa", "r")
+    #file_2 = open("Cryptomonas curvata_1-42761_v1.fa", "r")
 
-    # file_0 = open("Cryptomonas curvata.fa", "r")
-    # file_1 = open("Cryptomonas curvata_1-42761_v1.fa", "r")
-    # file_2 = open("Cryptomonas curvata_1-42761_v1.fa", "r")
+    #file_1 = open("Cryptomonas curvata_1-42761_v1.fa", "r")
+    #file_2 = open("Cryptomonas curvata_1-42761_v1.fa", "r")
 
     main()
 
@@ -232,3 +231,6 @@ if __name__ == "__main__":
     end = time.time()
     current_time = end -start
     print('current time :', current_time)
+    print("----------------< Speed >-------------------")
+    print("")
+    print("----------------< Graph setting Start >-------------------")
