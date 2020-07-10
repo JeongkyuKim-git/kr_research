@@ -101,41 +101,71 @@ def test_set_plot():
 def test_setting():
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1)
-    ax.set_xlabel("reference sequence [bp 120,000]")
-    ax.set_ylabel("query sequence [bp 40,000]")
+    plt.title('Alignment [3-mer]')
+    ax.set_xlabel("reference sequence [bp 14]")
+    ax.set_ylabel("query sequence [bp 12]")
 
     #np.random.randn(30)
     test_vx1 = (0,1,2)
     test_vy1 = (0,1,2)
-    plt.plot(test_vx1,test_vy1, color="g", marker="o", linestyle="-")
+    plt.plot(test_vx1,test_vy1, color="r", marker="o", linestyle="-")
 
     test_vx2 = (0,1,2)
     test_vy2 = (9,10,11)
     plt.plot(test_vx2,test_vy2, color="r", marker="o", linestyle="-")
 
-    test_vx3 = (2,3,4)
-    test_vy3 = (2,3,4)
-    plt.plot(test_vx3,test_vy3, color="g", marker="o", linestyle="-")
+    test_vx3 = (1,2,3)
+    test_vy3 = (1,2,3)
+    plt.plot(test_vx3,test_vy3, color="r", marker="o", linestyle="-")
 
     test_vx4 = (2,3,4)
-    test_vy4 = (11,12,13)
+    test_vy4 = (2,3,4)
     plt.plot(test_vx4, test_vy4, color="r", marker="o", linestyle="-")
 
-    test_vx5 = (3,4,5)
-    test_vy5 = (3,4,5)
-    plt.plot(test_vx5, test_vy5, color="g", marker="o", linestyle="-")
+    test_vx5 = (6,7,8)
+    test_vy5 = (6,7,8)
+    plt.plot(test_vx5, test_vy5, color="r", marker="o", linestyle="-")
 
-    test_vx6 = (3,4,5)
-    test_vy6 = (12,13,14)
+    test_vx6 = (6,7,8)
+    test_vy6 = (10,11,12)
     plt.plot(test_vx6, test_vy6, color="r", marker="o", linestyle="-")
 
-    test_vx7 = (11,12,13)
-    test_vy7 = (7,8,9)
-    plt.plot(test_vx7, test_vy7, color="g", marker="o", linestyle="-")
+    test_vx7 = (10,11,12)
+    test_vy7 = (6,7,8)
+    plt.plot(test_vx7, test_vy7, color="r", marker="o", linestyle="-")
 
-    test_vx8 = (11,12,13)
-    test_vy8 = (16,17,18)
+    test_vx8 = (3,4,5)
+    test_vy8 = (3,4,5)
     plt.plot(test_vx8, test_vy8, color="r", marker="o", linestyle="-")
+
+    test_vx9 = (4,5,6)
+    test_vy9 = (4,5,6)
+    plt.plot(test_vx9, test_vy9, color="r", marker="o", linestyle="-")
+
+    test_vx10 = (5,6,7)
+    test_vy10 = (5,6,7)
+    plt.plot(test_vx10, test_vy10, color="r", marker="o", linestyle="-")
+
+    #reverse
+    test_vx11 = (5,4,3)
+    test_vy11 = (0,1,2)
+    plt.plot(test_vx11, test_vy11, color="g", marker="o", linestyle="-")
+
+    test_vx12 = (5,4,3)
+    test_vy12 = (9,10,11)
+    plt.plot(test_vx12, test_vy12, color="g", marker="o", linestyle="-")
+
+    test_vx13 = (13,12,11)
+    test_vy13 = (5,6,7)
+    plt.plot(test_vx13, test_vy13, color="g", marker="o", linestyle="-")
+
+    test_vx14 = (14,13,12)
+    test_vy14 = (6,7,8)
+    plt.plot(test_vx14, test_vy14, color="g", marker="o", linestyle="-")
+
+    test_vx15 = (4,3,2)
+    test_vy15 = (8,9,10)
+    plt.plot(test_vx15, test_vy15, color="g", marker="o", linestyle="-")
 
     plt.show()
 
@@ -185,7 +215,7 @@ def main():
     # Main_Focus_Starting_print()
     print("--Main Function--",'\n')
 
-    print("Reference short read : >")
+    print("Reference short read > :")
     print(__local__ref_length)
 
     print("Query short read (Forward) > :")
@@ -294,8 +324,10 @@ def main():
 
     #figure_plot()
     #test_set_plot()
-    #test_setting()
+    test_setting()
 
+
+    """
     def test_graph():
         fig = plt.figure()
         ax = fig.add_subplot(1, 1, 1)
@@ -304,10 +336,12 @@ def main():
         ax.set_ylabel("query sequence [bp 40,000]")
         #plt.text(3.5, 3.0, '평균:2.5')
 
+
         # np.random.randn(30)
         test_vx1 = (0, 1, 2)
         test_vy1 = (0, 1, 2)
         plt.plot(test_vx1, test_vy1, color="g", marker="o", linestyle="-")
+    """
 
     #figure_chart2()
     print("")
